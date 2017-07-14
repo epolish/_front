@@ -1,0 +1,48 @@
+@import "~variables.scss";
+
+header.row {
+  height: 30vh;
+  padding: $topOffset;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0px 1px white;
+  p.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+  }
+  p.sub-title {
+    font-size: 20px;
+  }
+}
+section {
+  div.row.add-project {
+    background: $blueGradient;
+    margin: 0 auto;
+    height: $projectNameDivHeight;
+    width: 33%;
+    margin-top: 10%;
+    border-radius: 3px;
+    cursor: pointer;
+    div {
+      height: 100%;
+      padding-top: 4.5%;
+      background-image: $noiseTextureImage;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+      text-shadow: 0px 1px black;
+      img {
+        margin-top: 2%;
+        float: left;
+      }
+    }
+  }
+}
+footer.row {
+  margin-top: $topOffset;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}

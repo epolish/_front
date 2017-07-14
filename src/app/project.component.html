@@ -1,0 +1,53 @@
+<div class="row project">
+  <div class="col-xs-12">
+    <div class="row name">
+      <div class="col-xs-1 shedule-icon">
+        <img alt="shedule-icon" src="{{iconPath + 'icon.fw.png'}}">
+      </div>
+      <div class="col-xs-8 text">{{title}}</div>
+      <div class="col-xs-3 controls">
+        <img alt="shedule-icon" src="{{iconPath + 'trash.fw.png'}}" (click)="deleteProject()">
+        <img alt="shedule-icon" src="{{iconPath + 'pencil.fw.png'}}" (click)="updateProjectTitle()">
+      </div>
+    </div>
+    <div class="row add">
+      <div class="col-xs-1 green-plus-icon">
+        <img alt="shedule-icon" src="{{iconPath + 'green-plus.fw.png'}}">
+      </div>
+      <div class="col-xs-9">
+          <div class="input-group name">
+            <input type="text" class="form-control" placeholder="Start typing here to create a task...">
+          </div>
+          <div class="input-group date">
+            <input type="date" value="0000-00-00" class="form-control">
+          </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="input-group">
+          <input type="hidden">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" (click)="addTask()">Add Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row tasks">
+      <ul class="col-xs-12 sortable" dnd-sortable-container [sortableData]="listOne">
+        <li class="row task" *ngFor="let item of listOne; let i = index" dnd-sortable [sortableIndex]="i" (onDropSuccess)="droppedSuccess()">
+          <div class="col-xs-1">
+            <label>
+              <input type="checkbox">
+              <span></span>
+            </label>
+          </div>
+          <div class="col-xs-9 name">{{item}}</div>
+          <div class="col-xs-2 controls">
+            <img alt="shedule-icon" src="{{iconPath + 'updown.svg'}}">
+            <img alt="shedule-icon" src="{{iconPath + 'pencil.svg'}}">
+            <img alt="shedule-icon" src="{{iconPath + 'trash.svg'}}" (click)="deleteTask(item)">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
